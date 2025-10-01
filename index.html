@@ -71,6 +71,7 @@
       max-height: 0;
       overflow: hidden;
       transition: opacity 1s ease, max-height 1s ease;
+      flex-wrap: wrap;
     }
     .image-row.visible {
       opacity: 1;
@@ -94,11 +95,39 @@
     }
     p {
       color: #002f6c;
+      font-size: 18px;
     }
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.3); }
       100% { transform: scale(1); }
+    }
+
+    /* 📱 Responsive para móviles */
+    @media (max-width: 600px) {
+      .card {
+        padding: 30px 20px;
+      }
+      .heart {
+        font-size: 80px;
+      }
+      .hint {
+        font-size: 18px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 16px;
+      }
+      .image-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      .image {
+        height: 220px;
+        width: 90%;
+      }
     }
   </style>
 </head>
