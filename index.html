@@ -25,7 +25,7 @@
       border-radius: 20px;
       box-shadow: 0 0 25px rgba(0, 71, 171, 0.3);
       text-align: center;
-      max-width: 650px;
+      max-width: 500px;
       width: 100%;
       cursor: pointer;
       transition: transform 0.3s ease;
@@ -62,24 +62,25 @@
       opacity: 1;
       max-height: 1000px;
     }
-    .image-row {
+    .image-column {
       display: flex;
-      justify-content: center;
-      gap: 10px;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
       margin-top: 20px;
       opacity: 0;
       max-height: 0;
       overflow: hidden;
       transition: opacity 1s ease, max-height 1s ease;
-      flex-wrap: wrap;
     }
-    .image-row.visible {
+    .image-column.visible {
       opacity: 1;
-      max-height: 1000px;
+      max-height: 2000px;
     }
     .image {
-      height: 350px;
-      width: auto;
+      width: 70%;
+      max-width: 500px;
+      height: auto;
       object-fit: cover;
       border-radius: 10px;
       border: 2px solid #0047AB;
@@ -120,13 +121,9 @@
       p {
         font-size: 16px;
       }
-      .image-row {
-        flex-direction: column;
-        align-items: center;
-      }
       .image {
-        height: 220px;
-        width: 90%;
+        width: 100%;
+        height: auto;
       }
     }
   </style>
@@ -142,7 +139,7 @@
         <p>Desde Salta hasta tu corazón en USA, pienso en vos cada día. Gracias por ser vos 💫</p>
       </div>
 
-      <div class="image-row" id="image-row">
+      <div class="image-column" id="image-column">
         <img class="image" src="https://axelcaro555.github.io/HBJ2025/1.jpg" alt="Nosotros 1">
         <img class="image" src="https://axelcaro555.github.io/HBJ2025/2.jpg" alt="Nosotros 2">
         <img class="image" src="https://axelcaro555.github.io/HBJ2025/3.jpg" alt="Nosotros 3">
@@ -153,7 +150,7 @@
   <script>
     function showMessage() {
       document.getElementById('message').classList.add('visible');
-      document.getElementById('image-row').classList.add('visible');
+      document.getElementById('image-column').classList.add('visible');
       document.getElementById('hint').classList.add('hidden');
     }
   </script>
